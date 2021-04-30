@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>unitree_legged_sdk</name>
+  <version>0.0.0</version>
+  <description>unitree_legged_sdk</description>
+
+  <maintainer email="todo@todo.todo">Unitree Robotics</maintainer>
+  <author>Unitree Robotics</author>
+
+  <license>MPL-2.0</license>
+  <url>https://github.com/unitreerobotics/unitree_legged_sdk</url>
+
+  <!-- The following tags are recommended by REP-136 -->
+  <exec_depend condition="$ROS_VERSION == 1">catkin</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">ament_cmake</exec_depend>
+
+  <depend>lcm</depend>
+
+  <buildtool_depend>cmake</buildtool_depend>
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>

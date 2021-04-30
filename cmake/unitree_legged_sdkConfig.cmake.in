@@ -1,0 +1,21 @@
+set(unitree_legged_sdk_VERSION 0.0.0) # TODO
+
+@PACKAGE_INIT@
+
+set_and_check(unitree_legged_sdk_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
+set_and_check(unitree_legged_sdk_LIB_DIR "@PACKAGE_LIB_INSTALL_DIR@")
+
+check_required_components(Threads)
+check_required_components(lcm)
+
+find_package(Threads REQUIRED)
+find_package(lcm REQUIRED)
+
+set(ARCHITECTURE "amd64")
+add_library(_unitree_legged_sdk SHARED IMPORTED GLOBAL)
+set_target_properties(_unitree_legged_sdk PROPERTIES
+  IMPORTED_LOCATION ${unitree_legged_sdk_LIB_DIR}/libunitree_legged_sdk_${ARCHITECTURE}.so
+  INTERFACE_INCLUDE_DIRECTORIES ${unitree_legged_sdk_INCLUDE_DIR}
+)
+target_link_libraries(_unitree_legged_sdk INTERFACE Threads::Threads lcm)
+add_library(unitree_legged_sdk::unitree_legged_sdk ALIAS _unitree_legged_sdk)
