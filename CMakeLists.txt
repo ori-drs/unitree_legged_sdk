@@ -22,9 +22,9 @@ set_target_properties(unitree_legged_sdk PROPERTIES
   IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/lib/libunitree_legged_sdk_${ARCHITECTURE}.so
   INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+#add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-set(EXTRA_LIBS unitree_legged_sdk::unitree_legged_sdk Threads::Threads lcm)
+set(EXTRA_LIBS unitree_legged_sdk Threads::Threads lcm)
 
 # Configure build:
 include_directories(include ${lcm_INCLUDE_DIRS})
