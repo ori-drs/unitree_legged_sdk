@@ -94,3 +94,4 @@ write_basic_package_version_file(
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/unitree_legged_sdkConfig.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/unitree_legged_sdkConfigVersion.cmake
         DESTINATION ${LIB_INSTALL_DIR}/unitree_legged_sdk/cmake )
+install(FILES package.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME})
